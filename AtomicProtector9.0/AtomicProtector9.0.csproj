@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CF2F3A0D-6B4B-4A88-BB2F-7B6140EC00D9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>AtomicProtector9.0</RootNamespace>
+    <AssemblyName>AtomicProtector9.0</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>AtomicProtector9.0.ico</ApplicationIcon>
+    <StartupObject>AtomicProtector9._0.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="dnlib">
+      <HintPath>..\dnlib.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework">
+      <HintPath>..\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="-Module-.cs" />
+    <Compile Include="AtomicProtector9\_0\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AtomicProtector9\_0\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AtomicProtector9\_0\Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AtomicProtector9\_0\Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AtomicProtector9\_0\Program.cs" />
+    <Compile Include="AtomicProtector9\_0\Properties\Resources.cs" />
+    <Compile Include="AtomicProtector9\_0\Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="AtomicVM\Calli\Protection.cs" />
+    <Compile Include="AtomicVM\Calli\Runtime.cs" />
+    <Compile Include="AtomicVM\Virtualization\Assembly.cs" />
+    <Compile Include="AtomicVM\Virtualization\Locals.cs" />
+    <Compile Include="AtomicVM\Virtualization\Method_Wiper.cs" />
+    <Compile Include="AtomicVM\Virtualization\Value_Virt\Inject.cs" />
+    <Compile Include="AtomicVM\Virtualization\Value_Virt\Runtime.cs" />
+    <Compile Include="Blink_Obfuscator_1\_0\InjectContext.cs" />
+    <Compile Include="Blink_Obfuscator_1\_0\Protections\AntiDump.cs" />
+    <Compile Include="Blink_Obfuscator_1\_0\Protections\Anti_De4dot.cs" />
+    <Compile Include="Blink_Obfuscator_1\_0\Protections\Anti_Fiddler.cs" />
+    <Compile Include="Blink_Obfuscator_1\_0\Protections\Anti_Http_Debugger.cs" />
+    <Compile Include="Blink_Obfuscator_1\_0\Protections\Anti_ILDasm.cs" />
+    <Compile Include="Blink_Obfuscator_1\_0\Protections\Blink_png.cs" />
+    <Compile Include="Blink_Obfuscator_1\_0\Protections\Calli.cs" />
+    <Compile Include="Blink_Obfuscator_1\_0\Protections\Constants__numbers_.cs" />
+    <Compile Include="Blink_Obfuscator_1\_0\Protections\Constant_Mutation.cs" />
+    <Compile Include="Blink_Obfuscator_1\_0\Protections\Control_Flow.cs" />
+    <Compile Include="Blink_Obfuscator_1\_0\Protections\Distant_Constants.cs" />
+    <Compile Include="Blink_Obfuscator_1\_0\Protections\InjectHelper1.cs" />
+    <Compile Include="Blink_Obfuscator_1\_0\Protections\Invalid_Metadata.cs" />
+    <Compile Include="Blink_Obfuscator_1\_0\Protections\KoiVM_Fake_Watermark.cs" />
+    <Compile Include="Blink_Obfuscator_1\_0\Protections\LocalToFields.cs" />
+    <Compile Include="Blink_Obfuscator_1\_0\Protections\Packer.cs" />
+    <Compile Include="Blink_Obfuscator_1\_0\Protections\Ref_Proxy.cs" />
+    <Compile Include="Blink_Obfuscator_1\_0\Protections\Renamer.cs" />
+    <Compile Include="Blink_Obfuscator_1\_0\Protections\Renamer_v2.cs" />
+    <Compile Include="Blink_Obfuscator_1\_0\Protections\renamer_v3.cs" />
+    <Compile Include="Blink_Obfuscator_1\_0\Protections\SizeOf.cs" />
+    <Compile Include="Blink_Obfuscator_1\_0\Protections\Stack_Underflow.cs" />
+    <Compile Include="Blink_Obfuscator_1\_0\Protections\String_Encryption.cs" />
+    <Compile Include="Blink_Obfuscator_1\_0\Protections\Watermark.cs" />
+    <Compile Include="Blink_Obfuscator_1\_0\ProxyExtension.cs" />
+    <Compile Include="Blink_Obfuscator_1\_0\Runtime\AntiDump.cs" />
+    <Compile Include="Blink_Obfuscator_1\_0\Runtime\Constants\Numbers.cs" />
+    <Compile Include="Blink_Obfuscator_1\_0\Runtime\Fiddler.cs" />
+    <Compile Include="Blink_Obfuscator_1\_0\Runtime\HTTPDebugger.cs" />
+    <Compile Include="Blink_Obfuscator_1\_0\Runtime\String_Encryption.cs" />
+    <Compile Include="Blink_Obfuscator_1\_0\Runtime\String_Encryption_Virt.cs" />
+    <Compile Include="Blink_Obfuscator_1\_0\Runtime\Virtualization.cs" />
+    <Compile Include="Blink_Obfuscator_1\_0\Settings.cs" />
+    <Compile Include="c_auth\c_api.cs" />
+    <Compile Include="c_auth\c_encryption.cs" />
+    <Compile Include="c_auth\c_userdata.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AtomicProtector9\_0\Form1.resources" />
+    <EmbeddedResource Include="AtomicProtector9\_0\Form2.resources" />
+    <EmbeddedResource Include="AtomicProtector9\_0\Properties\Resources.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.manifest" />
+    <None Include="AtomicProtector9\_0\Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
